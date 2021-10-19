@@ -1,0 +1,125 @@
+<p>admin-project-fases!</p>
+
+<br> <br>
+
+<h2>Seleccionar la fase en la que trabajarás</h2>
+
+<div class ="div-row">
+
+    <label class="select"  > Elija la fase sobre la cual se va a trabajar
+        <select id="slct" class="minimal" required="required"   [(ngModel)]="crearfaseConResponsablesDTO.idtipofase"  matSuffix>
+            <option *ngFor="let fase of Auxiliar" [value]="fase.idtipofase" > {{fase.nombrefase}} 
+            
+            </option>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+
+        </select>
+
+     
+    </label>
+</div> 
+
+
+<h2>Escriba una descripcion breve de la fase que vas a trabajarás</h2>
+<textarea [(ngModel)]="crearfaseConResponsablesDTO.descripcionfase" placeholder="Descripción Para la fase seleccionada "></textarea>
+<br> <br>
+
+<h2>Seleccione los a los usuasrio que quieres integrar</h2>
+
+<br> <br>
+<table>
+    <thead>
+        <tr>
+            <th>Usuario</th>
+            <th>Rol  </th>
+            <th>seleccionar</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let grupo of grupoTrabajo">
+            <td>{{grupo.email}}</td>
+            <td>{{grupo.idNombrerol}}</td>
+            <td><button (click)="agregarUsuario(grupo.email,grupo.idNombrerol,grupo.idgrupo)" class="btn">Seleccionar</button></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+<h2>Usuarios agregados</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Rol  </th>
+                <th>eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let grupo of usuarioResponsable">
+                <td>{{grupo.nombre}}</td>
+                <td>{{grupo.rol}}</td>
+                <td><button (click)="eliminarUsuario(grupo.email,grupo.idNombrerol)" class="btn">X</button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+<br>
+<br>
+
+<h1>Fecha de inicio de la fase del proyecto</h1>
+<input  [(ngModel)]="crearfaseConResponsablesDTO.tiempoinicio" type="date" id="start">
+
+
+<br>
+<br>
+<h1>Fecha de finalizacion de la fase del proyecto</h1>
+<input  [(ngModel)]="crearfaseConResponsablesDTO.tiempofin" type="date" id="start">
+
+<br>
+<br>
+<h1>
+    Creear un nombre para la reunion de la fase a trabajar
+</h1>
+<textarea [(ngModel)]="crearfaseConResponsablesDTO.nombrereunion"  placeholder="Nombre para representar la session "></textarea>
+"nombrereunion": "Nombre Test Postman para reuniones",
+
+<h2>Escriba una descripcion breve sobre la reunion programada</h2>
+<textarea  [(ngModel)]="crearfaseConResponsablesDTO.descripcionreunion"  placeholder="Descripción de lo que se desea obtener de la session "></textarea>
+<br><br><br>
+
+
+<div>
+    <button (click)="matricular()" class="btn">Guardar </button>
+    
+</div>
+<br><br><br>
+<h2>
+    {{Mensaje}}
+</h2>
+<br>
+<br>
+<br>
+
+<button>
+    <a (click) = "VolverAControl()">Volver Al panel princial</a>
+</button>
+
+<br>
+<br>
+<!--<div class ="div-row">
+
+    <label class="select"  > Tipo de proyecto  
+        <select id="slct" class="minimal" required="required"   matSuffix>
+            <option *ngFor="let rol of roles" [value]="rol.idrol" > {{rol.nombrerol}} 
+            
+            </option>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+
+        </select>
+
+     
+    </label>
+</div> -->
+

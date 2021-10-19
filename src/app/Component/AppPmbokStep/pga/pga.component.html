@@ -1,0 +1,141 @@
+<!-- 
+<div class="contenido-accordion">
+    <mat-accordion class="example-headers-align" multi>
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title> Entradas PGA </mat-panel-title>
+
+                <mat-panel-description>
+
+                    <p style="margin-right:10px;margin-top:10px"> Estado </p>
+                    <div *ngIf="entrada;else elseBlockEntrada">
+                        <mat-icon style="margin-left:15px;color:green;"> done </mat-icon>
+                    </div>
+                    <ng-template #elseBlockEntrada>
+                        <mat-icon style="margin-left:10px;color:red">report_problem</mat-icon>
+                    </ng-template>
+
+
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div *ngIf="entrada;else elseBlockEntrada1">
+
+                <ng-template matExpansionPanelContent>
+                   
+                </ng-template>
+
+            </div>
+            <ng-template #elseBlockEntrada1>
+                <ng-template matExpansionPanelContent>
+                    <app-entradaspga></app-entradaspga>
+                 </ng-template>
+
+            </ng-template>
+
+
+
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title> Herramientas y técnicas</mat-panel-title>
+
+                <mat-panel-description>
+
+                    <p style="margin-right:10px;margin-top:10px"> Estado </p>
+                    <div *ngIf="herramienta;else elseBlockHerramienta">
+                        <mat-icon style="margin-left:15px;color:green;"> done </mat-icon>
+                    </div>
+                    <ng-template #elseBlockHerramienta>
+                        <mat-icon style="margin-left:10px;color:red">report_problem</mat-icon>
+                    </ng-template>
+
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <div *ngIf="pga;else elseBlockHerramienta1">
+                <div *ngIf="herramienta;else elseBlockHerramienta2">
+                     <ng-template matExpansionPanelContent>
+                     
+                    </ng-template>
+                </div>
+                <ng-template #elseBlockHerramienta2>
+                     <ng-template matExpansionPanelContent>
+                        <app-herramientapga></app-herramientapga>
+                     </ng-template>
+                </ng-template>
+             </div>
+            <ng-template #elseBlockHerramienta1>
+                <ng-template matExpansionPanelContent>
+
+                </ng-template>
+
+            </ng-template>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>
+
+-->
+
+
+<div class="contenido-accordion" style="margin-top:35px">
+    <mat-accordion class="example-headers-align" multi>
+        <!-- [disabled] = "!entrada ? 'disabled': null"  caso plan  herramienta -->
+        <mat-expansion-panel class="panel">
+
+                <mat-expansion-panel-header>
+                   <mat-panel-title> Entradas PGA </mat-panel-title>
+                    <mat-panel-description>
+
+                    <p style="margin-right:10px;margin-top:10px"> Estado </p>
+
+                    <div *ngIf="entrada;else elseBlock">
+                        <mat-icon style="margin-left:15px;color:green;"> done </mat-icon>
+                    </div>
+                    <ng-template #elseBlock>
+                        <mat-icon style="margin-left:10px;color:red">report_problem</mat-icon>
+                    </ng-template>
+
+
+                </mat-panel-description>
+               </mat-expansion-panel-header>
+
+              <ng-template matExpansionPanelContent>
+                <app-entradaspga></app-entradaspga>
+            </ng-template>
+
+        </mat-expansion-panel>
+
+
+  
+
+        <mat-expansion-panel class="panel"  [disabled] = "!entrada ? 'disabled': null">
+            <mat-expansion-panel-header>
+                <mat-panel-title> Herramientas y tecnicas PGA </mat-panel-title>
+
+                <mat-panel-description>
+
+                    <p style="margin-right:10px;margin-top:10px"> Estado </p>
+                    <div *ngIf="herramienta;else elseBloqueHerramienta">
+                        <mat-icon style="margin-left:15px;color:green;"> done </mat-icon>
+                    </div>
+                    <ng-template #elseBloqueHerramienta>
+                        <mat-icon style="margin-left:10px;color:red">report_problem</mat-icon>
+                    </ng-template>
+
+
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+ 
+            <ng-template matExpansionPanelContent>
+                <app-herramientapga></app-herramientapga>
+            </ng-template>
+
+        </mat-expansion-panel>
+    </mat-accordion>
+
+</div>

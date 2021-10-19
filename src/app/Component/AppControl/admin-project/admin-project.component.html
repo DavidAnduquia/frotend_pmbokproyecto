@@ -1,0 +1,79 @@
+<p>Administador</p>
+<h1>Matricular a un proyecto la gente</h1>
+
+ 
+<h2>
+    Seleccion la opcion para el rol del usuario
+</h2>
+
+<mat-radio-group class="example-radio-group" [(ngModel)]="radio">
+    <mat-radio-button class="example-radio-button" *ngFor="let radio1 of RadioOpciones" [value]="radio1">
+        <div *ngIf="radio1;else elseBlock">
+            Rol Existente
+        </div>
+        <ng-template #elseBlock>
+            NuevoRol
+        </ng-template>
+    </mat-radio-button>
+</mat-radio-group>
+
+
+<div *ngIf="radio;else elseBlock">
+
+    <h3>Seleccionar Rol </h3>
+    <div>
+        <select [(ngModel)]="dto.idrol" placeholder="Seleccionar ...">
+            <option *ngFor="let rol of tipoRol" [value]="rol.idrol">{{rol.nombrerol}}</option>
+        </select>
+    </div>
+
+
+
+</div>
+<ng-template #elseBlock>
+
+    <h3>Crear Rol </h3>
+    <input type="text" minlength="5" placeholder="Nuevo rol..." [(ngModel)]="dto.idNombrerol">
+
+</ng-template>
+<br>
+<br>
+<br>
+<div>
+    <h2>Buscar usuario</h2>
+    <input type="text" placeholder="Buscar Usuario " [(ngModel)]="dto.email">
+    <div>
+        <select [(ngModel)]="dto.email" placeholder="Seleccionar ...">
+            <option *ngFor="let user of usuariosLista" [value]="user.email">{{user.email}}</option>
+        </select>
+        <h3>{{dto.email}}</h3>
+    </div>
+</div>
+<div>
+    <h1>Formualrio </h1>
+    <h2>{{dto.idproyecto}}</h2>
+    <h2>{{dto.email}}</h2>
+    <h2>{{dto.idrol}}</h2>
+    <h2>{{dto.idNombrerol}}</h2>
+
+</div>
+<div>
+    <h2>
+        {{mensaje}}
+    </h2>
+</div>
+<div>
+
+    <button (click)="matricularUsuario()" class="btn">INGRESAR</button>
+</div>
+
+<br>
+<br>
+<br>
+
+<button>
+    <a (click) = "VolverAControl()">Volver Al panel princial</a>
+</button>
+
+<br>
+<br>

@@ -1,0 +1,28 @@
+<h3  mat-dialog-title> {{ data.title }} </h3> 
+<mat-dialog-content>
+ <div class="content-dialog">
+
+    <div class="row">
+        <div id="imgType" class="column" >
+            <img *ngIf="data.title == 'NOTIFICACIÓN DE ERROR'" class="imgNotification" src="/assets/img/loginUp/error.png">
+            <img *ngIf="data.title == 'NOTIFICACIÓN DE CONFIRMACION'"class="imgNotification" src="/assets/img/loginUp/ok.png">
+        </div>
+        <div class="column" >
+            <p class="contenido"> {{  data.typeError  }} </p>
+        </div>
+    </div>
+
+
+ </div>
+
+</mat-dialog-content>
+
+
+  <mat-dialog-actions>
+                <button color="warn" mat-button  [mat-dialog-close]="true"> Close </button>
+</mat-dialog-actions>
+				
+
+
+ 
+ 

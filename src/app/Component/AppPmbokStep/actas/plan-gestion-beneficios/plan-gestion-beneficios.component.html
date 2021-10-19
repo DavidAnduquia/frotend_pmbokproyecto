@@ -1,0 +1,448 @@
+<div *ngIf="cargaEnable; else DataEntrada">
+
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Cargando... </p>
+    </ngx-spinner>
+
+
+</div>
+<ng-template #DataEntrada>
+
+
+    <div class="camposdiv">
+        <div *ngIf="acciones; else Notacciones">
+            <p> Acciones el acta del proyecto PREVIO</p>
+            <textarea disabled matInput> {{planObjePrevio.acciones}} </textarea>
+        </div>
+        <ng-template #Notacciones>
+            <textarea  disabled matInput> {{planObjePrevio.acciones}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div class="camposdiv">
+        <div *ngIf="acciones; else Notacciones">
+            <p> Acciones el acta del proyecto </p>
+            <textarea [(ngModel)]="planObje.acciones" placeholder="Acciones..."> {{planObje.acciones}} </textarea>
+        </div>
+        <ng-template #Notacciones>
+            <textarea   disabled> {{planObje.acciones}} </textarea>
+        </ng-template>
+
+    </div>
+
+
+    <!-- ***********************-->
+
+    <div class="camposdiv">
+        <div *ngIf="componentes; else Notcomponentes">
+            <p> Componentes para el acta del proyecto PREVIO </p>
+            <textarea  disabled matInput> {{planObjePrevio.componentes}} </textarea>
+        </div>
+        <ng-template #Notcomponentes>
+            <textarea    disabled matInput> {{planObjePrevio.componentes}} </textarea>
+        </ng-template>
+
+    </div>
+
+
+    <div class="camposdiv">
+        <div *ngIf="componentes; else Notcomponentes">
+            <p> Componentes para el acta del proyecto </p>
+            <textarea  [(ngModel)]="planObje.componentes" matInput placeholder="Componentes para el acta..."> {{planObje.componentes}} </textarea>
+        </div>
+        <ng-template #Notcomponentes>
+            <textarea   disabled> {{planObje.componentes}} </textarea>
+        </ng-template>
+
+    </div>
+
+
+    <!-- ***********************-->
+    <div class="camposdiv">
+        <div *ngIf="prodcutos; else Notprodcutos">
+            <p> Productos para el acta del proyecto PREVIO</p>
+            <textarea  disabled matInput> {{planObjePrevio.prodcutos}} </textarea>
+        </div>
+        <ng-template #Notprodcutos>
+
+            <textarea  disabled matInput> {{planObjePrevio.prodcutos}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div class="camposdiv">
+        <div *ngIf="prodcutos; else Notprodcutos">
+            <p> Productos para el acta del proyecto </p>
+            <textarea [(ngModel)]="planObje.prodcutos" matInput placeholder="Productos..."> {{planObje.prodcutos}} </textarea>
+        </div>
+        <ng-template #Notprodcutos>
+
+            <textarea disabled> {{planObje.prodcutos}} </textarea>
+        </ng-template>
+
+    </div>
+
+
+    <!-- ***********************-->
+
+    <div class="camposdiv">
+        <div *ngIf="servicios; else Notservicios">
+            <p> Servicios para el acta del proyecto  PREVIO </p>
+            <textarea  disabled matInput> {{planObjePrevio.servicios}} </textarea>
+        </div>
+        <ng-template #Notservicios>
+            <textarea  disabled matInput> {{planObjePrevio.servicios}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div class="camposdiv">
+        <div *ngIf="servicios; else Notservicios">
+            <p> Servicios para el acta del proyecto</p>
+            <textarea [(ngModel)]="planObje.servicios" matInput placeholder="servicios..."> {{planObje.servicios}} </textarea>
+        </div>
+        <ng-template #Notservicios>
+            <textarea disabled> {{planObje.servicios}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <!-- ***********************-->
+    <div class="camposdiv">
+
+        <div *ngIf="resultado; else Notresultado">
+            <p> Resultado esperados para el acta del proyecto  PREVIO</p>
+            <textarea  disabled matInput> {{planObjePrevio.resultado}} </textarea>
+        </div>
+        <ng-template #Notresultado>
+            <textarea  disabled matInput> {{planObjePrevio.resultado}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div class="camposdiv">
+
+        <div *ngIf="resultado; else Notresultado">
+            <p> Resultado esperados para el acta del proyecto </p>
+            <textarea [(ngModel)]="planObje.resultado" matInput placeholder="Resultado..."> {{planObje.resultado}} </textarea>
+        </div>
+        <ng-template #Notresultado>
+            <textarea disabled> {{planObje.resultado}} </textarea>
+        </ng-template>
+
+    </div>
+    
+
+    <div *ngIf="!planObje.id_plan_gb;else elseBlockherram">
+        <button (click)="guardarPlanDeBeneficiosNuevo()"> Guardar plan de gestion </button>
+        <!-- <button (click)="guardarPlan()"> Guardar plan de gestion </button>-->
+    </div>
+    <ng-template #elseBlockherram>
+        <button (click)="updatePlanNuevo()"> Actualizar plan de gestion </button> 
+        <!-- <button (click)="updatePlan()"> Actualizar plan de gestion </button> -->
+    </ng-template>
+
+</ng-template>
+
+<!-- 
+<ng-template #DataEntrada>
+
+
+    <mat-grid-list cols="2" rowHeight="2:2">
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Acciones el acta del proyecto</mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="acciones; else Notacciones">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.acciones" matInput placeholder="acciones...."></textarea>
+                        </div>
+
+                        <ng-template #Notacciones>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="acciones....">{{planObje.acciones}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardaracciones()" mat-button>Guardar</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Componentes para el acta del proyecto </mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="componentes; else Notcomponentes">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.componentes" matInput placeholder="componentes...."></textarea>
+                        </div>
+
+                        <ng-template #Notcomponentes>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="componentes....">{{planObje.componentes}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarcomponentes()" mat-button>Guardar</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Productos para el acta del proyecto</mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="prodcutos; else Notprodcutos">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.prodcutos" matInput placeholder="prodcutos...."></textarea>
+                        </div>
+
+                        <ng-template #Notprodcutos>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="prodcutos....">{{planObje.prodcutos}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarprodcutos()" mat-button>Guardar</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Servicios para el acta del proyecto</mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="servicios; else Notservicios">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.servicios" matInput placeholder="servicios...."></textarea>
+                        </div>
+
+                        <ng-template #Notservicios>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="servicios....">{{planObje.servicios}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarservicios()" mat-button>Guardar</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Resultado esperados para el acta del proyecto</mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="resultado; else Notresultado">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.resultado" matInput placeholder="resultado...."></textarea>
+                        </div>
+
+                        <ng-template #Notresultado>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="resultado....">{{planObje.resultado}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarresultado()" mat-button>Guardar</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Guardar informacion del acta</mat-card-title>
+                    <mat-card-subtitle>La información que se almacenará será editada con autorización </mat-card-subtitle>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarPlan()" mat-button>Guardar</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+</ng-template>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="centrado">
+    <mat-card>
+        <p>
+            <mat-card-title>Acciones El acta del proyecto</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <div *ngIf="acciones; else Notacciones">
+                        <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.acciones" matInput placeholder="acciones...."></textarea>
+                    </div>
+
+                    <ng-template #Notacciones>
+                        <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="acciones....">{{planObje.acciones}}</textarea>
+                    </ng-template>
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <button (click)="guardaracciones()" mat-button>GUARDAR</button>
+            </mat-card-actions>
+        </p>
+    </mat-card>
+</div>
+<br>
+<br>
+<div class="centrado">
+    <mat-card>
+        <p>
+            <mat-card-title>Componentes para El acta del proyecto </mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <div *ngIf="componentes; else Notcomponentes">
+                        <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.componentes" matInput placeholder="componentes...."></textarea>
+                    </div>
+
+                    <ng-template #Notcomponentes>
+                        <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="componentes....">{{planObje.componentes}}</textarea>
+                    </ng-template>
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <button (click)="guardarcomponentes()" mat-button>GUARDAR</button>
+            </mat-card-actions>
+        </p>
+    </mat-card>
+</div>
+<br>
+<br>
+<div class="centrado">
+    <mat-card>
+        <p>
+            <mat-card-title>Productos Para El acta del proyecto</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <div *ngIf="prodcutos; else Notprodcutos">
+                        <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.prodcutos" matInput placeholder="prodcutos...."></textarea>
+                    </div>
+
+                    <ng-template #Notprodcutos>
+                        <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="prodcutos....">{{planObje.prodcutos}}</textarea>
+                    </ng-template>
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <button (click)="guardarprodcutos()" mat-button>GUARDAR</button>
+            </mat-card-actions>
+        </p>
+    </mat-card>
+</div>
+<br>
+<br> 
+<div class="centrado">
+    <mat-card>
+        <p>
+            <mat-card-title>Servicios para El acta del proyecto</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <div *ngIf="servicios; else Notservicios">
+                        <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.servicios" matInput placeholder="servicios...."></textarea>
+                    </div>
+
+                    <ng-template #Notservicios>
+                        <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="servicios....">{{planObje.servicios}}</textarea>
+                    </ng-template>
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <button (click)="guardarservicios()" mat-button>GUARDAR</button>
+            </mat-card-actions>
+        </p>
+    </mat-card>
+</div>
+<br>
+<br>
+<div class="centrado">
+    <mat-card>
+        <p>
+            <mat-card-title>Resultado esperados para El acta del proyecto</mat-card-title>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <div *ngIf="resultado; else Notresultado">
+                        <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="planObje.resultado" matInput placeholder="resultado...."></textarea>
+                    </div>
+
+                    <ng-template #Notresultado>
+                        <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="resultado....">{{planObje.resultado}}</textarea>
+                    </ng-template>
+                </mat-form-field>
+            </mat-card-content>
+
+            <mat-card-actions>
+
+                <button (click)="guardarresultado()" mat-button>GUARDAR</button>
+            </mat-card-actions>
+        </p>
+    </mat-card>
+</div>
+<div class="centrado">
+    <mat-card>
+        <p>
+            <mat-card-title>Guardar informacion del acta</mat-card-title>
+            <mat-card-subtitle>La información que se almacenará será editada con autorización </mat-card-subtitle>
+
+            <mat-card-actions>
+
+                <button (click)="guardarPlan()" mat-button>GUARDAR</button>
+            </mat-card-actions>
+        </p>
+    </mat-card>
+</div> -->

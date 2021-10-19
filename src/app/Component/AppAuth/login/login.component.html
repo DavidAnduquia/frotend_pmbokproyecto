@@ -1,0 +1,38 @@
+ 
+
+
+<div class="container">
+	<div class="container-left">
+		<img class="wave" src="/assets/img/loginUp/fondoLogin.svg" alt="image">
+		<img class="wave2" src="/assets/img/loginUp/reading.svg" alt="image">
+	</div>
+
+	<div class="container-right" >
+		<div class="login-form-container">
+			<h1>INICIO DE SESION</h1>
+			<div class ="div-row"> 
+			    <i class="fa fa-envelope" style="margin-left:-32px;margin-right:10px"></i>
+				<input type="email"  class="input-field" placeholder="Email o Username" name="email"  [(ngModel)]="usuarios.email" required/>
+			</div>
+
+			<div class ="div-row">
+				<i class="fas fa-lock" style="margin-right:10px" ></i>
+				<input placeholder="Password"  [type]="fieldTextType ? 'text': 'password' " class="input-field" [(ngModel)]="usuarios.password" required /> 
+				<i class="material-icons" style="position:relative;bottom:-5px;margin-left:10px "  [ngStyle] = "{'color' : fieldTextType ? 'red' : 'black'}" (click)="toggleFieldTextType()" matSuffix> {{ fieldTextType ? 'visibility':'visibility_off'  }} </i> 
+			</div> 
+			
+			<button (click) = "ingresar()"  class="btn">INGRESAR</button>
+			<p class="message">¿Aún no te registras?  <a routerLink="/register">registrarse</a></p>
+		</div> 
+
+	</div>
+
+ 
+ 
+
+</div> 
+ 
+<ngx-spinner   bdColor="rgba(51,51,51,0.8)" size="medium"  color="#fff"  type="ball-spin-clockwise-fade">
+<p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>
+ 

@@ -1,0 +1,32 @@
+.Padre {
+    background-color: #EAD5D1;
+}
+
+.mat-card-header {
+    justify-content: center;
+}
+
+.mat-card-subtitle {
+    justify-content: center;
+}
+
+.entradas {
+    justify-content: center;
+}
+
+.Herramientas {
+    justify-content: center;
+}
+
+.casoNegocio {
+    justify-content: center;
+}
+
+.planBeneficios {
+    justify-content: center;
+}
+
+
+.panel{
+    background-color: blanchedalmond;
+}

@@ -1,0 +1,31 @@
+ .imgNotification{ 
+     width: 35px;
+ }
+
+ #imgType{
+     width: 15%;
+ 
+ }
+
+ .column {
+    float: left;
+    width: 80%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+.content-dialog{
+    width: 250px;
+
+    
+}
+
+.contenido { 
+    padding-left: 4% ;
+    margin-bottom: 5%;
+}

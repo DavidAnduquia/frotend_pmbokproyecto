@@ -1,0 +1,39 @@
+
+
+<mat-toolbar color="primary" class="mat-elevation-z15" >   
+    
+    <span> 
+        <mat-icon>school</mat-icon>
+        {{title}}
+    </span>
+
+
+    <div class="spacer2"></div>
+
+    <a mat-button routerLink="/home">
+        <mat-icon>folder</mat-icon>
+        Proyectos
+    </a>
+
+    <div class="spacer"></div>
+
+    <a mat-button routerLink="/Mensajes">
+        <mat-icon>markunread_mailbox</mat-icon>
+         Mensajes ( {{cantidadMensajes}} )
+    </a>
+
+
+    
+    <div class="spacer"></div>
+
+    <a mat-button  >
+        <mat-icon> email</mat-icon>
+        {{ nombreUsuario }} 
+    </a>
+
+
+
+
+
+
+</mat-toolbar>

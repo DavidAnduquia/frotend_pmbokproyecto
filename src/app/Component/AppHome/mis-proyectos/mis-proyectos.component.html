@@ -1,0 +1,46 @@
+ 
+ <div class="div1">
+        <button (click)="buscarProyectos()" style="left:20px;background-color:green" type="button" mat-stroked-button data-type="minus"> Actualizar </button>
+        <input matInput class="barraBusqueda" type="text" placeholder = "Buscar por nombre proyecto,creador" [(ngModel)]="filterpost"   name="filterpost"/>   
+        <button style="top:-1px; left:30%" class="buttonClear" *ngIf="filterpost"  mat-icon-button aria-label="Clear" (click)="filterpost=''">
+          <mat-icon>close</mat-icon>
+        </button>
+</div>
+
+
+
+
+<div class="div2" *ngFor="let proyecto of proyectos | filterProyecto:filterpost ">
+   
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar  style="margin:7px;">
+        <mat-icon>person</mat-icon>
+      </div>
+      <mat-card-title>{{proyecto.nombre}}</mat-card-title>
+      <mat-card-subtitle> <a style="color: rgb(255, 145, 0); font-size: 12px;"> {{ proyecto.admin }} </a></mat-card-subtitle>
+    </mat-card-header>
+   <!--  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+   
+    <mat-card-content>
+      <p>
+        {{proyecto.descripcion}}
+      </p>
+      <div class="card__meta" *ngFor="let tip of tipos">
+        <span *ngIf="proyecto.tipo_id == tip.tipo_id ">Tipo {{tip.clasificacion}}</span>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button (click) = "entrarProyecto(proyecto.nombre,proyecto.idproyecto)">Ver proyecto </a>
+    </mat-card-actions>
+  </mat-card>
+  
+
+</div>
+
+
+
+
+
+
+ 

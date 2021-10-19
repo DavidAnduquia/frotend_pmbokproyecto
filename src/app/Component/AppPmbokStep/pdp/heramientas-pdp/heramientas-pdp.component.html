@@ -1,0 +1,200 @@
+
+
+
+    <div *ngIf="cargaEnable; else DataCaso">
+
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Cargando... </p>
+    </ngx-spinner>
+
+
+</div>
+
+
+
+
+<ng-template #DataCaso>
+
+    <div class="camposdiv">
+        <p> Juicio expertos pdp PREVIOS </p>
+        <textarea   matInput disabled> {{herramientasPdpTMP.juicioexpertos}} </textarea>
+    </div> 
+
+    <div class="camposdiv">
+        <p> Juicio expertos pdp </p>
+        <textarea [(ngModel)]="herramientasPdp.juicioexpertos"    placeholder="Datos ..."> {{herramientasPdp.juicioexpertos}} </textarea>
+    </div> 
+
+    <!-- ************************************ -->
+
+    <div class="camposdiv"> 
+        <p> Recopilacion datos pdp   </p>
+        <textarea   matInput disabled> {{herramientasPdpTMP.recopilaciondatos}} </textarea>
+    </div>
+
+
+
+    <div class="camposdiv"> 
+        <p> Recopilacion datos pdp   </p>
+        <textarea  [(ngModel)]="herramientasPdp.recopilaciondatos"  matInput placeholder="Recopilacion ..."> {{herramientasPdp.recopilaciondatos}} </textarea>
+    </div>
+
+
+
+    <!-- ************************************ -->
+
+    <div class="camposdiv">
+        <p> Habilidades  pdp  </p>
+        <textarea   matInput disabled> {{herramientasPdpTMP.habilidades}} </textarea>
+    </div>
+
+  
+    <div class="camposdiv">
+        <p> Habilidades  pdp  </p>
+        <textarea [(ngModel)]="herramientasPdp.habilidades"  matInput placeholder="Habilidades ..."> {{herramientasPdp.habilidades}} </textarea>
+    </div>
+    <!-- ************************************ -->
+    <div class="camposdiv">
+        <p> Herramientas reuniones  pdp  </p>
+        <textarea   matInput disabled> {{herramientasPdpTMP.herramientareuniones}} </textarea>
+    </div>
+    
+    <div class="camposdiv">
+        <p> Herramientas reuniones  pdp  </p>
+        <textarea [(ngModel)]="herramientasPdp.herramientareuniones"  matInput placeholder="Herramientas ..."> {{herramientasPdp.herramientareuniones}} </textarea>
+    </div>
+    
+    <!-- ************************************ -->
+
+    <div *ngIf="!herramientasPdp.idherramienta;else elseBlockPGA">
+        <button (click)="guardarHerramientasPdpNUEVO()"> Guardar herramientas pdp </button>
+    </div>
+    <ng-template #elseBlockPGA>
+        <button (click)="updateHerramientaPdpNUEVO()"> Actualizar herramientas pdp </button>
+    </ng-template>
+
+</ng-template>  
+
+
+<!--
+<ng-template #DataCaso>
+
+    <mat-grid-list cols="2" rowHeight="2:2">
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>juicioexpertos </mat-card-title>
+                    <mat-card-content>
+
+
+                        <div *ngIf="juicioexpertos; else Notjuicioexpertos">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="herramientasPdp.juicioexpertos" matInput placeholder="juicioexpertos...."></textarea>
+                        </div>
+
+                        <ng-template #Notjuicioexpertos>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="juicioexpertos....">{{herramientasPdp.juicioexpertos}}</textarea>
+                        </ng-template>
+
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarjuicioexpertos()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>recopilaciondatos </mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="recopilaciondatos; else Notrecopilaciondatos">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="herramientasPdp.recopilaciondatos" matInput placeholder="recopilaciondatos...."></textarea>
+                        </div>
+
+                        <ng-template #Notrecopilaciondatos>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="recopilaciondatos....">{{herramientasPdp.recopilaciondatos}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarrecopilaciondatos()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>habilidades para El acta del proyecto </mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="habilidades; else Nothabilidadess">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="herramientasPdp.habilidades" matInput placeholder="habilidades...."></textarea>
+                        </div>
+
+                        <ng-template #Nothabilidadess>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="habilidades....">{{herramientasPdp.habilidades}}</textarea>
+                        </ng-template>
+
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarhabilidades()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>herramientareuniones para El acta del proyecto</mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="herramientareuniones; else Notherramientareuniones">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="herramientasPdp.herramientareuniones" matInput placeholder="herramientareuniones...."></textarea>
+                        </div>
+
+                        <ng-template #Notherramientareuniones>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="herramientareuniones....">{{herramientasPdp.herramientareuniones}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarherramientareuniones()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Guardar informacion del acta</mat-card-title>
+                    <mat-card-subtitle>La información que se almacenará será editada con autorización </mat-card-subtitle>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarHerramientasPdp()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+
+
+
+    </mat-grid-list>
+</ng-template>
+-->

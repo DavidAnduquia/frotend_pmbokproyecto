@@ -1,0 +1,160 @@
+
+<div *ngIf="cargaEnable; else DataCaso">
+
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Cargando... </p>
+    </ngx-spinner>
+
+
+</div>
+
+
+
+<ng-template #DataCaso>
+
+    <div class="camposdiv">
+        <p> Otros procesos Previos</p>
+        <textarea   disabled    placeholder="Datos ..."> {{entradasPDPTMP.otrosprocesos}} </textarea>
+    </div> 
+
+    <div class="camposdiv">
+        <p> Otros procesos </p>
+        <textarea    [(ngModel)]="entradasPDP.otrosprocesos"    placeholder="Datos ..."> {{entradasPDP.otrosprocesos}} </textarea>
+    </div> 
+
+    <!-- ********************** -->
+    
+    <div class="camposdiv"> 
+        <p> Factores ambientales pdp  previos </p>
+        <textarea  disabled matInput placeholder=""> {{entradasPDPTMP.factoresambientales}} </textarea>
+    </div>
+
+    <div class="camposdiv"> 
+        <p> Factores ambientales pdp   </p>
+        <textarea   [(ngModel)]="entradasPDP.factoresambientales"  matInput placeholder="Factores ..."> {{entradasPDP.factoresambientales}} </textarea>
+    </div>
+
+
+    <!-- ********************** -->
+    <div class="camposdiv">
+        <p> Procesos activos pdp previos </p>
+        <textarea    disabled  matInput placeholder=""> {{entradasPDPTMP.activosprocesos}} </textarea>
+    </div>
+
+    <div class="camposdiv">
+        <p> Procesos activos pdp  </p>
+        <textarea    [(ngModel)]="entradasPDP.activosprocesos"  matInput placeholder="Procesos ..."> {{entradasPDP.activosprocesos}} </textarea>
+    </div>
+
+  
+
+    <div *ngIf="!entradasPDP.identradapdp;else elseBlockPGA">
+        <button (click)="guardarEntradasPdpNuevo()"> Guardar entrada pdp </button>
+    </div>
+    <ng-template #elseBlockPGA>
+        <button (click)="updateEntradaPdpnuevo()"> Actualizar entrada pdp </button>
+    </ng-template>
+
+</ng-template>    
+
+
+<!--
+<ng-template #DataCaso>
+
+    <mat-grid-list cols="2" rowHeight="2:2">
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>otrosprocesos</mat-card-title>
+                    <mat-card-content>
+
+
+                        <div *ngIf="otrosprocesos; else Nototrosprocesos">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="entradasPDP.otrosprocesos" matInput placeholder="metas...."></textarea>
+                        </div>
+
+                        <ng-template #Nototrosprocesos>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="otrosprocesos....">{{entradasPDP.otrosprocesos}}</textarea>
+                        </ng-template>
+
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarotrosprocesos()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>factoresambientales </mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="factoresambientales; else Notfactoresambientales">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="entradasPDP.factoresambientales" matInput placeholder="factoresambientales...."></textarea>
+                        </div>
+
+                        <ng-template #Notfactoresambientales>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="factoresambientales....">{{entradasPDP.factoresambientales}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarfactoresambientales()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>activosprocesos </mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="activosprocesos; else Notactivosprocesos">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="entradasPDP.activosprocesos" matInput placeholder="activosprocesos...."></textarea>
+                        </div>
+
+                        <ng-template #Notactivosprocesos>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="activosprocesos....">{{entradasPDP.activosprocesos}}</textarea>
+                        </ng-template>
+
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardaractivosprocesos()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+
+        <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Guardar informacion del acta</mat-card-title>
+                    <mat-card-subtitle>La información que se almacenará será editada con autorización </mat-card-subtitle>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarEntradasPdp()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+
+
+
+    </mat-grid-list>
+</ng-template>
+-->

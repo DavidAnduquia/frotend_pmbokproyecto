@@ -1,0 +1,34 @@
+textarea {
+    resize:both;
+    height: 10em;
+    width: 45em;
+ 
+    outline: none;
+    background-color: rgb(249, 250, 248);
+
+    border-radius: 7px;
+    border: 1px solid rgb(168, 168, 168);
+ }
+
+textarea:focus {
+    outline: 3px solid transparent;
+    border: 2px solid rgba(28, 73, 71, 0.849);
+
+}
+
+.camposdiv{
+    margin-top: 40px;
+}
+
+p{
+    font-size: 15px;
+    font-family: Arial;  
+}
+
+
+button {
+    width: 105px;
+    height: 40px;
+    border-radius: 7px;
+
+}

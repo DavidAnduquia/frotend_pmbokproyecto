@@ -1,0 +1,149 @@
+<!-- 
+<mat-card>
+
+    <mat-card-content class="mat-card-content-padre">
+
+        <mat-card-title class="ti">
+            <h2>Herramientas del Acta <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                <mat-icon  (click)="Ver()" class="transformation">Ver</mat-icon>
+              </button>
+            </h2>
+
+
+        </mat-card-title>
+        <div *ngIf="vista ; else elseBlock">
+    
+            <mat-card-content class="mat-card-content-1">
+                <h4>juicioexpertos de Herramientas del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verjuicioexpertos()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistajuicioexpertos ; else elseBlockjuicioexpertos">
+                    {{datosHerramientas.juicioexpertos}}
+                </p>
+                <ng-template #elseBlockjuicioexpertos></ng-template>
+            </mat-card-content>
+ 
+            <mat-card-content class="mat-card-content-2">
+                <h4>recopilaciondatos Herramientas del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verrecopilaciondatos()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistarecopilaciondatos ; else elseBlockvistarecopilaciondatos">
+                    {{datosHerramientas.recopilaciondatos}}
+                </p>
+                <ng-template #elseBlockvistarecopilaciondatos></ng-template>
+
+            </mat-card-content>
+   
+            <mat-card-content class="mat-card-content-1">
+                <h4>habilidades de Herramientas del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verhabilidades()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistahabilidades ; else elseBlocksvistahabilidades">
+                    {{datosHerramientas.habilidades}}
+                </p>
+                <ng-template #elseBlocksvistahabilidades></ng-template>
+            </mat-card-content>
+      
+            <mat-card-content class="mat-card-content-2">
+                <h4> Reuniones de Herramientas del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="VerReuniones()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaReuniones ; else elseBlocksvistaReuniones">
+                    {{datosHerramientas.herramientareuniones}}
+                </p>
+                <ng-template #elseBlocksvistaReuniones></ng-template>
+            </mat-card-content>
+         
+        </div>
+        <ng-template #elseBlock></ng-template>
+    </mat-card-content>
+
+</mat-card>
+-->
+
+
+
+
+<div class="contenido-accordion"> 
+<mat-accordion class="example-headers-align" multi>
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Juicio de expertos de herramientas del acta </mat-panel-title>
+
+                <mat-panel-description>  
+             
+
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                    {{datosHerramientas.juicioexpertos}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+            <mat-panel-title>  Recopilacion de datos herramientas del acta </mat-panel-title>
+
+            <mat-panel-description>  
+ 
+
+            
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+                {{datosHerramientas.recopilaciondatos}}
+            </ng-template>
+        </mat-expansion-panel>
+
+
+          <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Habilidades de herramientas del acta </mat-panel-title>
+
+                <mat-panel-description>  
+            
+          
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                     {{datosHerramientas.habilidades}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Reuniones de herramientas del acta </mat-panel-title>
+
+                <mat-panel-description>  
+            
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                         {{datosHerramientas.herramientareuniones}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+ 
+
+</mat-accordion>
+
+</div>

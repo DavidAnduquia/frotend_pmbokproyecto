@@ -1,0 +1,143 @@
+<!-- 
+<mat-card>
+    <mat-card-content class="mat-card-content-padre">
+
+        <mat-card-title class="ti">
+            <h2>Caso de Negocio del Acta
+                <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Ver()" class="transformation">Ver</mat-icon>
+                  </button>
+            </h2>
+
+        </mat-card-title>
+        <div *ngIf="vista ; else elseBlock">
+         
+            <mat-card-content class="mat-card-content-1">
+                <h4>Metas del caso de negocio
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="VerMetas()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaMetas ; else elseBlockvistaMetas">
+                    {{datosCasoNegocio.metas}}
+                </p>
+                <ng-template #elseBlockvistaMetas></ng-template>
+            </mat-card-content>
+
+            <mat-card-content class="mat-card-content-2">
+                <h4>objetivos del caso de negocio
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verobjetivos()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaobjetivos ; else elseBlockvistaobjetivos">
+                    {{datosCasoNegocio.objetivos}}
+                </p>
+                <ng-template #elseBlockvistaobjetivos></ng-template>
+            </mat-card-content>
+         
+            <mat-card-content class="mat-card-content-1">
+                <h4>incidentes del caso de negocio
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verincidentes()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaincidentes ; else elseBlockvistaincidentes">
+                    {{datosCasoNegocio.incidentes}}
+                </p>
+                <ng-template #elseBlockvistaincidentes></ng-template>
+            </mat-card-content>
+
+            <mat-card-content class="mat-card-content-2">
+                <h4>oportunidades del caso de negocio
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Veroportunidades()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaoportunidades ; else elseBlockvistaoportunidades">
+                    {{datosCasoNegocio.oportunidades}}
+                </p>
+                <ng-template #elseBlockvistaoportunidades></ng-template>
+            </mat-card-content>
+         
+        </div>
+        <ng-template #elseBlock></ng-template>
+    </mat-card-content>
+
+</mat-card>
+
+-->
+
+
+
+<div class="contenido-accordion"> 
+<mat-accordion class="example-headers-align" multi>
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                      <mat-panel-title>  Metas del caso de negocio</mat-panel-title>
+                <mat-panel-description>  
+             
+
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                  {{datosCasoNegocio.metas}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+                        <mat-panel-title>  Objetivos del caso de negocio</mat-panel-title>
+            <mat-panel-description>  
+ 
+            
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+              {{datosCasoNegocio.objetivos}}
+            </ng-template>
+        </mat-expansion-panel>
+
+
+          <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Incidentes del caso de negocio </mat-panel-title>
+
+                <mat-panel-description>  
+            
+          
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                      {{datosCasoNegocio.incidentes}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                        <mat-panel-title>  Oportunidades del caso de negocio </mat-panel-title>
+                <mat-panel-description>  
+            
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                       {{datosCasoNegocio.oportunidades}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+ 
+
+</mat-accordion>
+
+</div>

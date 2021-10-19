@@ -1,0 +1,33 @@
+.mat-card{
+    background-color: #F3E7E5 ;
+    margin: 1%;
+}
+.mat-card-header{
+    justify-content:center;
+}
+.title{
+    justify-content:center;
+}
+.mat-card-content-padre{
+    background-color: whitesmoke;
+    }
+
+.mat-card-content-1{
+    border-radius: 20px;
+    padding: 2%;
+    margin: 1%;
+    background-color: #EBB97B;
+
+}
+.mat-card-content-2{
+    border-radius: 20px;
+    padding: 2%;
+    margin: 1%;
+    background-color:#E19191;
+}
+
+
+
+.panel{
+    background-color: beige;
+}

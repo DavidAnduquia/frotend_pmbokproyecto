@@ -1,0 +1,45 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+      <mat-nav-list>
+        
+        <mat-list-item (click)="isExpanded = !isExpanded" >
+          <span *ngIf="isExpanded">Control</span>
+          <mat-icon mat-list-icon class="chevron-button sidenav-button" [ngClass]="{'rotated': isExpanded}">menu</mat-icon>
+        </mat-list-item>
+      
+
+        <mat-list-item routerLink="contribuidores">
+          <mat-icon mat-list-icon >supervisor_account</mat-icon>
+          <span *ngIf="isExpanded">Contribuidores</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="proyectofases">
+          <mat-icon mat-list-icon>view_compact</mat-icon>
+          <span *ngIf="isExpanded">Fases</span>
+        </mat-list-item>
+  
+        <mat-list-item routerLink="controlfases">
+          <mat-icon mat-list-icon>devices</mat-icon>
+          <span *ngIf="isExpanded">Reuniones</span>
+        </mat-list-item>
+
+        <mat-list-item routerLink="seguimiento" >
+          <mat-icon mat-list-icon>assignment_turned_in</mat-icon>
+          <span *ngIf="isExpanded">Seguimiento</span>
+        </mat-list-item>
+  
+
+     
+      </mat-nav-list>
+    </mat-sidenav>
+  
+
+
+    <div class="content">
+      <mat-toolbar>
+        <h4> Panel de control </h4>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+    </div>
+  
+  </mat-sidenav-container>

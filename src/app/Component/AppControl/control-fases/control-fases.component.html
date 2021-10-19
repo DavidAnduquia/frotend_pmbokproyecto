@@ -1,0 +1,116 @@
+<h1>CONTROL DE FASES </h1>
+<h4>Vista para revisr los parametrso generales de las reuniones programadas</h4>
+
+<h2>Usuarios agregados</h2>
+
+
+TABLA PENDIENTE DE ORDENAR Y GENERAR EL FORMATO DE LAS HORAS!
+<table border="1">
+    <thead>
+        <th>nombreProyecto</th>
+        <th>descripcionProyecto</th>
+
+        <td>nombreReunion</td>
+        <td>descripcionReunion</td>
+        <td>Nombre de la Fase</td>
+        <td>descripcion de la Fase</td>
+        <td>inicio</td>
+        <td>fin</td>
+        <td>estado</td>
+        <td>Ver Grupo de Trabajo</td>
+
+    </thead>
+    <!-- <tbody>
+        <tr *ngFor="let cosa of Reuniones">
+            <ng-container *ngFor="let proyecto of cosa.proyectos">
+                <td>{{proyecto.nombre}}</td>
+                <td>{{proyecto.descripcion}}</td>
+            </ng-container>
+
+            <ng-container *ngFor="let reu of cosa.reuniones">
+                <td>{{reu.nombrereunion}}</td>
+                <td>{{reu.descripcionreunion}}</td>
+            </ng-container>
+            <ng-container *ngFor="let fase of cosa.fases">
+                <td>{{fase.nombrefase}}</td>
+                <td>{{fase.descripcionfase}}</td>
+                <td>{{fase.tiempoinicio | date: 'dd/MM/yyyy'}}</td>
+                <td>{{fase.tiempofin | date: 'dd/MM/yyyy'}}</td>
+                <!- -<td>{{today | date:'dd/MM/yyyy'}}</td> - ->
+                <td *ngIf="fase.tiempofin  >= today;else elseBlock"> Cerrado </td>
+
+                <ng-template #elseBlock>
+                    <td>Activo</td>
+                </ng-template>
+                <td><button  (click) = "verGrupo(fase.idfase)">Ver [(*)]</button></td>
+            </ng-container>
+
+        </tr>
+
+    </tbody>-->
+    <tbody>
+        <ng-container *ngFor="let cosa of Reuniones">
+            <ng-container *ngFor="let cosa2 of cosa.reuniones">
+                <ng-container *ngFor="let cosa3 of cosa2.fases">
+
+                    <tr>
+                        <td>{{cosa.nombre}}</td> <!-- <th>nombreProyecto</th>-->
+                        <td>{{cosa.descripcion}}</td> <!-- <th>descripcionProyecto</th>-->
+                        <td>{{cosa2.nombrereunion}}</td> <!--  <td>nombreReunion</td> -->
+                        <td>{{cosa2.descripcionreunion}}</td> <!-- <td>descripcionReunion</td>-->
+                        <td>{{cosa3.nombrefase}}</td>
+                        <td>{{cosa3.descripcionfase}}</td>
+                        <td>{{cosa3.tiempoinicio | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{cosa3.tiempofin | date: 'dd/MM/yyyy'}}</td>
+                        <td *ngIf="cosa3.tiempofin  >= today;else elseBlock"> Cerrado </td>
+                        
+                        <ng-template #elseBlock>
+                            <td>Activo</td>
+                            <td><button  (click) = "verGrupo(cosa3.idfase)">Ver [(*)]</button></td>
+                            
+                        </ng-template>
+
+                        
+                    </tr>
+
+                </ng-container>
+
+
+
+            </ng-container>
+        </ng-container>
+    </tbody>
+</table>
+
+<br>
+<br>
+<h2>----------------</h2>
+<h1>El grupo de trabajo es:</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>usuario</th>
+            <th>rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let responsable of responsables">
+            <td>{{responsable.email}}</td>
+            <td>{{responsable.nombrerol}}</td>
+
+
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<button>
+    <a (click)="VolverAControl()">Volver Al panel princial</a>
+</button>
+
+<br>
+<br>

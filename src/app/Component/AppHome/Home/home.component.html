@@ -1,0 +1,50 @@
+ 
+<div class="support-grid"></div>
+
+<div class="band">
+    <div class="pantalla"> 
+        
+        <div class="recuadro">
+            <!-- <h3>Proyecos</h3>-->
+          <!--
+            <ng-container *ngIf="(asyncTabs | async) === null">
+                <H3>Cargando datos...</H3>
+            </ng-container>
+-->         
+<ngx-spinner   bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-spin-clockwise-fade">
+        <p style="font-size: 20px; color: white">Cargando...</p>
+</ngx-spinner>
+
+
+            <mat-tab-group>
+
+                <mat-tab *ngFor="let tab of asyncTabs | async">
+                    <ng-template mat-tab-label>
+                        <button mat-raised-button color="primary">{{tab.label}}</button>
+                    </ng-template>
+
+                    <div *ngIf="tab.label=== 'Mis proyectos' ">
+                        <app-mis-proyectos></app-mis-proyectos>
+                        <!--<app-traspaso></app-traspaso>-->
+                    </div>
+                    <div *ngIf="tab.label=== 'Participaciones' ">
+                        <app-participaciones></app-participaciones>
+                        <!--<app-reintegro></app-reintegro>-->
+                    </div>
+                    <div *ngIf="tab.label=== 'Crear proyecto' ">
+                        <app-proyecto-save></app-proyecto-save>
+                        <!--<app-traspaso-ppi500></app-traspaso-ppi500>-->
+                    </div>
+                    <div *ngIf="tab.label=== 'Todos los proyectos' ">
+                        <app-proyectos></app-proyectos>
+                        <!--<app-reintegro></app-reintegro>-->
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+
+
+ 
+
+</div>

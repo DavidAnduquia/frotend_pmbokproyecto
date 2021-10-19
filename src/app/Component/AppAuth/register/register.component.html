@@ -1,0 +1,47 @@
+
+<img class="wave" src="/assets/img/loginUp/fondoRegister2.svg">
+
+<div class="container">
+	 
+
+	<div class="container-right" >
+		<div class="login-form-container">
+			<h1>REGISTRO DE USUARIO</h1>
+	 
+    	<div class ="div-row">
+				<i class="fa fa-envelope" style="padding-right:18px"></i>
+				<input type="email" id="email"  class="input-field" placeholder="Email o Username" name="email" [(ngModel)]="usuarios.email" required />
+			 
+			</div>
+			<div class ="div-row">
+				<i class="fas fa-lock" style="padding-right:18px"></i>
+      			<input type="password" id="password" class="input-field" placeholder="Password"  name="password" [(ngModel)]="usuarios.password" required />
+ 			</div>
+			 
+      		<div class ="div-row">
+				<i class="fas fa-user" style="padding-right:18px"></i>
+        		<input type="username" id="username"  class="input-field" placeholder="Name" name="username" [(ngModel)]="usuarios.nombre" required />
+			</div> 
+			
+			<div class ="div-row">
+				<button  (click)="registrarUsuario()"style="margin-top:5%"   class="btn">REGISTRAR</button>
+		
+			</div>
+
+					<button  routerLink="/login" class="btn">VOLVER</button>
+		</div> 
+	 
+	</div>
+</div>
+
+
+<ngx-spinner   bdColor="rgba(51,51,51,0.8)" size="medium"  color="#fff"  type="ball-spin-clockwise-fade">
+<p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+
+
+
+
+
+

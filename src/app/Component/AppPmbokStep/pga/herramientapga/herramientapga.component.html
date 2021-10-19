@@ -1,0 +1,117 @@
+<div *ngIf="cargaEnable; else DataCaso">
+
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Cargando... </p>
+    </ngx-spinner>
+
+</div>
+
+
+<ng-template #DataCaso>
+
+    <div class="camposdiv">
+        <p> Juicios de expertos  pga previos</p>
+        <textarea  matInput disabled> {{herramientasPGATMP.juicioexpertos}} </textarea>
+    </div> 
+
+
+    <div class="camposdiv">
+        <p> Juicios de expertos  pga </p>
+        <textarea  [(ngModel)]="herramientasPGA.juicioexpertos"   placeholder="Juicios de expertos ..."> {{herramientasPGA.juicioexpertos}} </textarea>
+    </div> 
+
+    <!-- *************************** -->
+    <div class="camposdiv">  <p> Analisis   </p>
+        <textarea matInput disabled> {{herramientasPGATMP.analisis}} </textarea>
+    </div>
+
+    <div class="camposdiv">  <p> Analisis   </p>
+        <textarea  [(ngModel)]="herramientasPGA.analisis"  matInput placeholder="Recopilacion de datos ..."> {{herramientasPGA.analisis}} </textarea>
+    </div>
+  
+    <div *ngIf="!herramientasPGA.idherramientapga;else elseBlockPGA">
+        <button (click)="guardarHerramientasPgaNuevo()"> Guardar herramientas pga </button>
+        <!-- <button (click)="guardarHerramientasPga()"> Guardar herramientas pga </button> -->
+    </div>
+    <ng-template #elseBlockPGA>
+        <button (click)="guardarHerramientasPgaNuevo()"> Actualizar herramientas pga </button>
+        <!--  <button (click)="updateHerramientaPga()"> Actualizar herramientas pga </button> -->
+    </ng-template>
+
+</ng-template>  
+
+
+<!-- 
+<ng-template #DataCaso>
+
+    <mat-grid-list cols="2" rowHeight="2:2">
+         <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>juicioexpertos </mat-card-title>
+                    <mat-card-content>
+
+
+                        <div *ngIf="juicioexpertos; else Notjuicioexpertos">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="herramientasPGA.juicioexpertos" matInput placeholder="juicioexpertos...."></textarea>
+                        </div>
+
+                        <ng-template #Notjuicioexpertos>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="juicioexpertos....">{{herramientasPGA.juicioexpertos}}</textarea>
+                        </ng-template>
+
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="juicioexpertosM()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+         <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>analisis </mat-card-title>
+                    <mat-card-content>
+
+                        <div *ngIf="analisis; else Notanalisis">
+                            <textarea cols="60" rows="20" style="resize: both;" [(ngModel)]="herramientasPGA.analisis" matInput placeholder="recopilaciondatos...."></textarea>
+                        </div>
+
+                        <ng-template #Notanalisis>
+                            <textarea cols="60" rows="20" style="resize: both;" disabled matInput placeholder="analisis....">{{herramientasPGA.analisis}}</textarea>
+                        </ng-template>
+
+                    </mat-card-content>
+
+                    <mat-card-actions>
+
+                        <button (click)="analisisM()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+         <mat-grid-tile>
+            <mat-card>
+                <p>
+                    <mat-card-title>Guardar informacion del De las herramientas para PGA</mat-card-title>
+                    <mat-card-subtitle>La información que se almacenará será editada con autorización </mat-card-subtitle>
+
+                    <mat-card-actions>
+
+                        <button (click)="guardarHerramientasPga()" mat-button>GUARDAR</button>
+                    </mat-card-actions>
+                </p>
+            </mat-card>
+        </mat-grid-tile>
+
+
+
+
+    </mat-grid-list>
+</ng-template>
+-->
+
+

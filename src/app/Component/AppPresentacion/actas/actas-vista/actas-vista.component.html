@@ -1,0 +1,112 @@
+<!--
+
+<body>
+    <h3>Presentación del acta de constitución</h3>
+
+
+    <div class="Padre">
+        <mat-card-header>
+
+            <mat-card-title>
+                <h1>ACTA DE CONSTITCIÓN DEL PROYECTO </h1>
+            </mat-card-title>
+            <mat-card-subtitle>.</mat-card-subtitle>
+        </mat-card-header>
+
+        <div class="entradas">
+
+            <app-entrada></app-entrada>
+        </div>
+        <div class="Herramientas">
+
+            <app-herramientas></app-herramientas>
+        </div>
+        <div class="casoNegocio"></div>
+        <app-caso-negocios></app-caso-negocios>
+
+        <div class="planBeneficios">
+
+            <app-plan-gestion></app-plan-gestion>
+        </div>
+    </div>
+</body>
+
+-->
+<h3 style="margin-top:15px">Presentación del acta de constitución</h3>
+
+
+<div class="contenido-accordion"> 
+<mat-accordion class="example-headers-align" multi>
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Entradas del acta </mat-panel-title>
+
+                <mat-panel-description>  
+             
+
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                 <app-entrada></app-entrada>
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+            <mat-panel-title>  Herramientas del acta</mat-panel-title>
+
+            <mat-panel-description>  
+ 
+
+            
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+            <app-herramientas></app-herramientas>
+            </ng-template>
+        </mat-expansion-panel>
+
+
+          <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Caso de negocio del acta </mat-panel-title>
+
+                <mat-panel-description>  
+            
+          
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                    <app-caso-negocios></app-caso-negocios>
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Plan de gestion de beneficios del acta </mat-panel-title>
+
+                <mat-panel-description>  
+            
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+            <app-plan-gestion></app-plan-gestion>
+                </ng-template>
+        </mat-expansion-panel>
+
+
+ 
+
+</mat-accordion>
+
+</div>

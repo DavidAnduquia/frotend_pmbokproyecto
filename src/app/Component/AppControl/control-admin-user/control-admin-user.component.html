@@ -1,0 +1,90 @@
+ 
+  <mat-drawer-container>
+  
+    <!-- MENU LIST -->
+    <mat-drawer  id="menu-drawer" mode="side" opened="true">
+        <!-- Header MENU -->
+        <div class="header-side">
+        
+            <div id="icon-panel">
+            <mat-icon>settings</mat-icon>
+            </div>
+  
+            <div class="header-content">
+            <h2>Panel de control</h2>
+            </div>
+  
+        </div>
+  
+      <mat-divider  > </mat-divider>
+      <!-- LIST-->
+      <mat-nav-list>
+        
+        <a mat-list-item (click)="cambiarEstado(1)" 
+        routerLinkActive="list-item-active">
+          <mat-icon>supervisor_account</mat-icon>
+          Contribuidores
+        </a>
+  
+        <mat-divider> </mat-divider>
+        
+        <a mat-list-item (click)="cambiarEstado(2)"
+           routerLinkActive="list-item-active">
+          <mat-icon>view_compact</mat-icon> Fases
+        </a>
+        
+        <mat-divider> </mat-divider>
+        
+        <a (click)="cambiarEstado(3)" mat-list-item>
+          <mat-icon>devices</mat-icon> Reuniones
+        </a>
+  
+        <mat-divider> </mat-divider>
+        <a (click)="cambiarEstado(4)" mat-list-item>
+          <mat-icon>assignment_turned_in</mat-icon> Seguimiento
+        </a>
+        
+        <mat-divider> </mat-divider>
+      </mat-nav-list>
+      
+    </mat-drawer>
+    
+    <!-- CONTENIDO -->
+    <mat-drawer-content>
+   
+  
+        <div class="card" *ngIf="showControlAdmin">
+          <h1>ControlAdminProject</h1>
+          <mat-divider></mat-divider>
+        
+            <app-admin-project></app-admin-project>  
+        
+        </div>
+  
+        <div class="card" *ngIf="showControlFases">
+          // Agendar as reuniones con el grupo de trabajo
+          <h3>
+            Para revisar las reuniones por fase realizadas y sus respectivos
+            responsables ingresa aqui
+          </h3>
+          <app-admin-project-fases></app-admin-project-fases>
+        </div>
+  
+        <div class="card" *ngIf="showControlReuniones">
+          <h3>
+            Para revisar las reuniones por fase realizadas y sus respectivos
+            responsables ingresa aqui
+          </h3>
+          <app-control-fases> </app-control-fases>
+        </div>
+  
+        <div class="card" *ngIf="showSeguimiento">
+          <h1>SeguimientoProyecto</h1>
+          <h3>Para ingresar a los datos PMBOK del proyecto ingresa aqui</h3>
+          <app-seguimiento-proyecto></app-seguimiento-proyecto>
+        </div>
+   
+    </mat-drawer-content>
+  
+  </mat-drawer-container>
+ 

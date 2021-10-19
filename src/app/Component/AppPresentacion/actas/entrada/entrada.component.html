@@ -1,0 +1,123 @@
+<!--
+<mat-card>
+
+    <mat-card-content class="mat-card-content-padre">
+
+        <mat-card-title>
+            <h2>Entradas del Acta
+                <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Ver()" class="transformation">Ver</mat-icon>
+                  </button>
+            </h2>
+        </mat-card-title>
+        <div *ngIf="vista ; else elseBlock">
+   
+            <mat-card-content class="mat-card-content-1">
+                <h4>acuerdos del Acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon  (click)="Veracuerdos()" class="transformation">Ver</mat-icon>
+                      </button>
+                </h4>
+
+                <p *ngIf="vistaacuerdos ; else elseBlockvistaacuerdos">
+
+                    {{datosEntrada.acuerdos}}
+                </p>
+                <ng-template #elseBlockvistaacuerdos></ng-template>
+            </mat-card-content>
+      
+            <mat-card-content class="mat-card-content-2">
+                <h4>factores del Acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon  (click)="Verfactores()" class="transformation">Ver</mat-icon>
+                      </button>
+                </h4>
+                <p *ngIf="vistafactores ; else elseBlockvistafactores">
+                    {{datosEntrada.factores}}
+                </p>
+                <ng-template #elseBlockvistafactores></ng-template>
+            </mat-card-content>
+          
+            <mat-card-content class="mat-card-content-1">
+                <h4>activos del Acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                        <mat-icon  (click)="Veractivos()" class="transformation">Ver</mat-icon>
+                      </button>
+                </h4>
+                <p *ngIf="vistaactivos ; else elseBlockvistaactivos">
+                    {{datosEntrada.activosprocesos}}
+                </p>
+                <ng-template #elseBlockvistaactivos></ng-template>
+            </mat-card-content>
+       
+
+        </div>
+        <ng-template #elseBlock></ng-template>
+
+    </mat-card-content>
+
+</mat-card>
+
+
+-->
+
+<div class="contenido-accordion"> 
+<mat-accordion class="example-headers-align" multi>
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Ver acuerdos </mat-panel-title>
+
+                <mat-panel-description>  
+             
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                                            {{datosEntrada.acuerdos}}
+
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+            <mat-panel-title>  Ver factores </mat-panel-title>
+
+            <mat-panel-description>  
+ 
+            
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+                           {{datosEntrada.factores}}       
+
+            </ng-template>
+        </mat-expansion-panel>
+
+
+          <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Ver activos </mat-panel-title>
+
+                <mat-panel-description>  
+            
+          
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                  {{datosEntrada.activosprocesos}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        
+ 
+
+</mat-accordion>
+
+</div>

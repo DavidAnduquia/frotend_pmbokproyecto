@@ -1,0 +1,81 @@
+<br>
+<br>
+<br>
+<table border="1">
+    <thead>
+        <th>nombreProyecto</th>
+        <th>descripcionProyecto</th>
+
+        <td>nombreReunion</td>
+        <td>descripcionReunion</td>
+        <td>Nombre de la Fase</td>
+        <td>descripcion de la Fase</td>
+        <td>inicio</td>
+        <td>fin</td>
+        <td>estado</td>
+        <td>INgresar</td>
+
+    </thead>
+    <!-- <tbody>
+        <tr *ngFor="let cosa of Reuniones">
+            <ng-container *ngFor="let proyecto of cosa.proyectos">
+                <td>{{proyecto.nombre}}</td>
+                <td>{{proyecto.descripcion}}</td>
+            </ng-container>
+
+            <ng-container *ngFor="let reu of cosa.reuniones">
+                <td>{{reu.idreuniones}}</td>
+                <td>{{reu.descripcionreunion}}</td>
+            </ng-container>
+            <ng-container *ngFor="let fase of cosa.fases">
+                <td>{{fase.nombrefase}}</td>
+                <td>{{fase.descripcionfase}}</td>
+                <td>{{fase.tiempoinicio | date: 'dd/MM/yyyy'}}</td>
+                <td>{{fase.tiempofin | date: 'dd/MM/yyyy'}}</td>
+                <!- -<td>{{today | date:'dd/MM/yyyy'}}</td>- ->
+                <td *ngIf="fase.tiempofin  >= today;else elseBlock"> Cerrado </td>
+
+                <ng-template #elseBlock>
+                    <td>Activo</td>
+                </ng-template>
+                <td><button  (click) = "ingresofase(fase.nombrefase,fase)" >Ingresar [(*)]</button></td>
+            </ng-container>
+
+        </tr>
+
+
+    </tbody>-->
+    <tbody>
+        <ng-container *ngFor="let cosa of Reuniones">
+            <ng-container *ngFor="let cosa2 of cosa.reuniones">
+                <ng-container *ngFor="let cosa3 of cosa2.fases">
+
+                    <tr>
+                        <td>{{cosa.nombre}}</td> <!-- <th>nombreProyecto</th>-->
+                        <td>{{cosa.descripcion}}</td> <!-- <th>descripcionProyecto</th>-->
+                        <td>{{cosa2.nombrereunion}}</td> <!--  <td>nombreReunion</td> -->
+                        <td>{{cosa2.descripcionreunion}}</td> <!-- <td>descripcionReunion</td>-->
+                        <td>{{cosa3.nombrefase}}</td>
+                        <td>{{cosa3.descripcionfase}}</td>
+                        <td>{{cosa3.tiempoinicio | date: 'dd/MM/yyyy'}}</td>
+                        <td>{{cosa3.tiempofin | date: 'dd/MM/yyyy'}}</td>
+                        <td *ngIf="cosa3.tiempofin  >= today;else elseBlock"> Cerrado </td>
+                        <!-- deberia ir en modo DISABLE-->
+                        <td><button (click)="ingresofase(cosa3.nombrefase,cosa3)">Ingresar [(*)]</button></td>
+                        <ng-template #elseBlock>
+                            <td>Activo</td>
+                            <td><button (click)="ingresofase(cosa3.nombrefase,cosa3)">Ingresar [(*)]</button></td>
+                            
+                        </ng-template>
+
+                        
+                    </tr>
+
+                </ng-container>
+
+
+
+            </ng-container>
+        </ng-container>
+    </tbody>
+</table>

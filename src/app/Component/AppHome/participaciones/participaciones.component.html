@@ -1,0 +1,64 @@
+ 
+<div class="div1">
+    
+    <input matInput class="barraBusqueda" type="text" placeholder = "Buscar por nombre proyecto,creador" [(ngModel)]="filterpost"   name="filterpost"/>   
+    <button style="top:-1px; left:37%" class="buttonClear" *ngIf="filterpost"  mat-icon-button aria-label="Clear" (click)="filterpost=''">
+      <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+
+<!--   <div class="div3 divisor"> </div>
+-->
+<div class="div2">
+<div fxLayout="row wrap" fxLayoutGap="16px grid">
+ <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let proyecto of proyectos | filterProyecto:filterpost ">
+     <div class="wrapper">
+
+      <div class="card radius shadowDepth1">
+      <div class="card__image border-tlr-radius" >
+        <img src="/assets/img/proyectos/tipoProyecto/productivo.jpg" *ngIf="proyecto.tipo_id == 'tipo01'" alt="image" class="border-tlr-radius">
+        <img src="/assets/img/proyectos/tipoProyecto/proyectos-sociales.png" *ngIf="proyecto.tipo_id == 'tipo02'" alt="image2" class="border-tlr-radius">
+        <img src="/assets/img/proyectos/tipoProyecto/comunitario.jpg" *ngIf="proyecto.tipo_id == 'tipo03'" alt="image2" class="border-tlr-radius">
+        <img src="/assets/img/proyectos/tipoProyecto/proyectoVida2.jpg" *ngIf="proyecto.tipo_id == 'tipo04'" alt="image2" class="border-tlr-radius">
+        <img src="/assets/img/proyectos/tipoProyecto/investigacion.jpg" *ngIf="proyecto.tipo_id == 'tipo05'" alt="image2" class="border-tlr-radius">
+
+      </div>
+
+      <div class="card__content card__padding">
+          <div class="card__share">
+            <!-- <a id="share" class="share-icon" href="#"> Ver </a>  --> 
+          </div>
+        
+
+        <div class="card__meta" *ngFor="let tip of tipos">
+          <a *ngIf="tip.tipo_id == proyecto.tipo_id">{{tip.clasificacion}}</a>
+       <!--   <time>17th March</time> -->
+        </div>
+
+        <article class="card__article">
+          <h2><a href="#">{{proyecto.nombre}}</a></h2>
+
+          <p>{{proyecto.descripcion}}</p>
+        </article>
+      </div>
+  
+      <div class="card__content card__padding">
+        <div class="card__share">
+          <a id="share" class="share-icon" (click) = "entrarProyecto(proyecto)"> Ver </a>
+        </div>
+      <div class="card__action">
+        <div class="card__author">
+          <img src="/assets/img/proyectos/iconFinder.png" alt="user">
+          <div class="card__author-content">
+            By <a style="color: rgb(255, 145, 0);"> {{ proyecto.admin }} </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+ </div>
+</div>
+
+
+</div>

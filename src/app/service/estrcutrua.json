@@ -1,0 +1,110 @@
+// 
+[
+    {
+        "proyectos": {
+            "idproyecto": 23,
+            "nombre": "proyecto 1",
+            "descripcion": "primer proyecto para pruebas de lógica de usuario",
+            "admin": "usuario@pmbok.com",
+            "tipo_id": "tipo05",
+            "reuniones": [
+                {
+                    "idreuniones": 114,
+                    "nombrereunion": "ANALISIS INICIAL PARA EL ACTA DE CONSTITUCIÓN DEL PROYECTO",
+                    "descripcionreunion": "SE REALIZARÁ EL PRIMERE ANALISIS JUNTO  A LOS INTEGRANTES 1 Y 2 ",
+                    "idproyecto": 23,
+                    "fase": {
+                        "idfase": 17,
+                        "nombrefase": "Acta-Entrada",
+                        "descripcionfase": "PRIMERA REUNION CON LOS USUARIOS 1 Y 2",
+                        "tiempoinicio": "2021-08-21T05:00:00.000+00:00",
+                        "tiempofin": "2021-08-28T05:00:00.000+00:00"
+                    }
+                },
+                {
+                    "idreuniones": 116,
+                    "nombrereunion": "Reunion prueba de mas reunines mismo usuario _1",
+                    "descripcionreunion": "Descr Reunion prueba de mas reunines mismo usuario _1",
+                    "idproyecto": 23,
+                    "fase": {
+                        "idfase": 19,
+                        "nombrefase": "Acta-Herramietas",
+                        "descripcionfase": "prueba de mas reunines mismo usuario _1",
+                        "tiempoinicio": "2021-08-31T05:00:00.000+00:00",
+                        "tiempofin": "2021-09-02T05:00:00.000+00:00"
+                    }
+                },
+                {
+                    "idreuniones": 117,
+                    "nombrereunion": "reunione sfase",
+                    "descripcionreunion": "descripcon reunion",
+                    "idproyecto": 23,
+                    "fase": {
+                        "idfase": 20,
+                        "nombrefase": "Acta-CasoNegocio",
+                        "descripcionfase": "22222",
+                        "tiempoinicio": "2021-09-04T05:00:00.000+00:00",
+                        "tiempofin": "2021-09-05T05:00:00.000+00:00"
+                    }
+                }
+            ]
+        }
+    }
+]
+
+
+///////////////////////////////
+[
+    {
+        "proyectos": [
+            {
+                "idproyecto": 26,
+                "nombre": "1 PROYECTO",
+                "descripcion": "PROBAR LA LOGICA DE USUARIO\nGRACIAS",
+                "admin": "admin1@pmbok.com",
+                "tipo_id": "1"
+            }
+        ],
+        "reuniones": [
+            {
+                "idreuniones": 121,
+                "nombrereunion": "Fase de reuniones para Herramientas",
+                "descripcionreunion": "Renion 2 herramientas registro 5 para pruebas y fallos ",
+                "idproyecto": 26,
+                "idfase": 24
+            },
+            {
+                "idreuniones": 122,
+                "nombrereunion": "Reunion 5 Entradas 3",
+                "descripcionreunion": "descripcon Reunion 5 Entradas 3",
+                "idproyecto": 26,
+                "idfase": 25
+            }
+        ],
+        "fases": [
+            {
+                "idfase": 24,
+                "nombrefase": "Acta-Herramientas",
+                "descripcionfase": "reunions 2 para herramientas",
+                "tiempoinicio": "2021-09-09T05:00:00.000+00:00",
+                "tiempofin": "2021-09-10T05:00:00.000+00:00"
+            },
+            {
+                "idfase": 25,
+                "nombrefase": "Acta-Entrada",
+                "descripcionfase": "tercera reunion para el Acta",
+                "tiempoinicio": "2021-09-10T05:00:00.000+00:00",
+                "tiempofin": "2021-09-11T05:00:00.000+00:00"
+            }
+        ]
+    }
+]
+
+// salidas 
+{
+    "idfase": 20,
+    "nombrefase": "Acta-CasoNegocio",
+    "descripcionfase": "22222",
+    "tiempoinicio": "2021-09-04T05:00:00.000+00:00",
+    "tiempofin": "2021-09-05T05:00:00.000+00:00"
+}

@@ -1,0 +1,70 @@
+:host{
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+#divpadre{
+  height: 100%;
+}
+
+.content {
+  box-shadow: 4px 4px 4px 4px rgba(20, 20, 20, 0.562);
+  padding:30px;
+  height: 50%;
+  margin: 12px 30px;
+  border-radius: 20px;
+}
+
+.header-side{
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  height: 10vh;
+}
+
+.header-content{
+  margin: 0 2px;
+  height: 30px;
+}
+
+
+mat-drawer{
+  width: 220px;
+  background: rgba(255, 255, 255, 0.87);
+  box-shadow: 4px 4px 4px 3px rgba(66, 49, 49, 0.836);
+}
+
+
+mat-nav-list{
+  padding-top:35px;
+}
+
+.mat-icon{
+
+  padding:5px;
+}
+
+mat-divider{
+  margin:0px 20px;
+  border-top-width: 1px;
+  background-color: rgb(97, 97, 97);
+}
+
+
+::ng-deep.mat-list-item-content:hover{
+  border-radius: 5px;
+  margin: 0 20px;
+  color: rgb(3, 3, 3);
+  background-color: rgba(250, 20, 20, 0.568);
+}
+
+
+mat-drawer-container{
+height: 100%;
+}
+

@@ -1,0 +1,135 @@
+<div *ngIf="cargaEnable; else DataCaso">
+
+    <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+        <p style="font-size: 20px; color: white">Cargando... </p>
+    </ngx-spinner>
+</div>
+
+<ng-template #DataCaso>
+    <div class="camposdiv">
+        <!-- <button [disabled] = "metas ? null : 'disabled'"  (click)="updateCasoNegocio()"   > Guardar fase</button> -->
+        <p>  Metas de acta del proyecto previas </p>
+        <textarea disabled  placeholder="Metas..."> {{casoMegocioTMP.metas}} </textarea>
+    </div> 
+
+
+    <div class="camposdiv">
+        <!-- <button [disabled] = "metas ? null : 'disabled'"  (click)="updateCasoNegocio()"   > Guardar fase</button> -->
+        <p>  Metas de acta del proyecto  </p>
+        <textarea  [(ngModel)]="casoMegocio.metas"  placeholder="Metas..."> {{casoMegocio.metas}} </textarea>
+    </div> 
+    <!--   ************************** -->
+    <div class="camposdiv"> 
+        <p> Objetivos para el acta del proyecto  PREVIOS   </p>
+        <textarea disabled matInput > {{casoMegocioTMP.objetivos}} </textarea>
+    </div>
+
+    <div class="camposdiv"> 
+        <p> Objetivos para el acta del proyecto    </p>
+        <textarea [(ngModel)]="casoMegocio.objetivos"  matInput placeholder="Objetivos..."> {{casoMegocio.objetivos}} </textarea>
+    </div>
+
+    <!--   ************************** -->
+
+
+    <div class="camposdiv">
+        <p> Incidentes para el acta del proyecto  previos </p>
+        <textarea   disabled matInput > {{casoMegocioTMP.incidentes}} </textarea>
+    </div>
+
+
+    <div class="camposdiv">
+        <p> Incidentes para el acta del proyecto  </p>
+        <textarea [(ngModel)]="casoMegocio.incidentes"  matInput placeholder="Incidentes..."> {{casoMegocio.incidentes}} </textarea>
+    </div>
+
+    <!--   ************************** -->
+
+   
+    <div class="camposdiv">
+        <p> Oportunidades para el acta del proyecto previos  </p>
+        <textarea disabled matInput > {{casoMegocioTMP.oportunidades}} </textarea>
+    </div>
+
+    <div class="camposdiv">
+        <p> Oportunidades para el acta del proyecto previos  </p>
+        <textarea [(ngModel)]="casoMegocio.oportunidades"  matInput placeholder="Oportunidades..."> {{casoMegocio.oportunidades}} </textarea>
+    </div>
+ 
+
+    <div *ngIf="casoMegocio.id_caso_negocio == 0;else elseBlockCaso">
+        <!-- <button (click)="guardarCasoNegocio()"> Guardar caso de negocio </button> -->
+        <button (click)="guardarCasoNegocioNuevo()"> Guardar caso de negocio </button>
+    </div>
+    <ng-template #elseBlockCaso>
+        <!-- <button (click)="updateCasoNegocio()"> Actualizar caso de negocio </button> -->
+        <button (click)="updateCasoNegocioNuevo()"> Actualizar caso de negocio </button>
+
+    </ng-template>
+
+
+</ng-template>    
+
+<br>
+
+
+<!-- 
+<ng-template #DataCaso>
+    <div>
+
+        <div *ngIf="metas; else Notmetas">
+            <p> Metas de acta del proyecto <button [disabled]="metas ? null : 'disabled'" (click)="guardarmetas()"> Guardar </button> </p>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" [(ngModel)]="casoMegocio.metas" placeholder="Metas..."> {{casoMegocio.metas}} </textarea>
+        </div>
+        <ng-template #Notmetas>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" disabled> {{casoMegocio.metas}} </textarea>
+        </ng-template>
+    </div>
+
+    <div>
+
+        <div *ngIf="objetivos; else Notobjetivos">
+            <p> Objetivos para el acta del proyecto
+                <button [disabled]="objetivos ? null : 'disabled'" (click)="guardarobjetivos()"> Guardar </button>
+            </p>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" [(ngModel)]="casoMegocio.objetivos" matInput placeholder="Objetivos..."> {{casoMegocio.objetivos}} </textarea>
+        </div>
+        <ng-template #Notobjetivos>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" matInput disabled> {{casoMegocio.objetivos}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div>
+
+        <div *ngIf="incidentes; else Notincidentess">
+            <p> Incidentes para el acta del proyecto
+                <button [disabled]="incidentes ? null : 'disabled'" (click)="guardarincidentes()">  Guardar </button>
+            </p>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" [(ngModel)]="casoMegocio.incidentes" matInput placeholder="Incidentes..."> {{casoMegocio.incidentes}} </textarea>
+        </div>
+        <ng-template #Notincidentess>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" matInput disabled> {{casoMegocio.incidentes}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div>
+        <div *ngIf="oportunidades; else Notoportunidades">
+            <p> Oportunidades para el acta del proyecto
+                <button [disabled]="oportunidades ? null : 'disabled'" (click)="guardaroportunidades()">  Guardar </button>
+            </p>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" [(ngModel)]="casoMegocio.oportunidades" matInput placeholder="Oportunidades..."> {{casoMegocio.oportunidades}} </textarea>
+        </div>
+        <ng-template #Notoportunidades>
+            <textarea style="resize: both;" cols="90" rows="10" style="resize: both;" matInput disabled> {{casoMegocio.oportunidades}} </textarea>
+        </ng-template>
+
+    </div>
+
+    <div>
+        <button (click)="guardarCasoNegocio()"> Guardar caso de negocio </button>
+    </div>
+</ng-template>
+
+-->

@@ -1,0 +1,36 @@
+<div class="container">
+ 
+	<div class="container-right" >
+		<div class="login-form-container">
+			<h1>Crea tu proyecto ahora </h1>
+			<div class ="div-row"> 
+				<input type="email"  class="input-field" placeholder="Nombre del proyecto"  [(ngModel)]="proyecto.nombre" name="nombre" required/>
+			</div>
+
+			<div class ="div-row">
+				<textarea name="descripcion" cols="37" placeholder="Descripcion breve de tu proyecto" rows="4" [(ngModel)]="proyecto.descripcion"  class="input-field"  required >  </textarea>
+			</div> 
+
+			<div class ="div-row">
+
+				<label class="select"  > Tipo de proyecto  
+					<select id="slct" class="minimal" required="required"  [(ngModel)]="proyecto.tipo_id" matSuffix>
+						<option *ngFor="let tipo of tipos" [value]="tipo.tipo_id" > {{tipo.clasificacion}} 
+						
+						</option>
+					<mat-icon>keyboard_arrow_down</mat-icon>
+
+					</select>
+
+				 
+				</label>
+
+				<div> 
+					<button (click)="guardarNuevoProyecto()" type="button" class="btn">Crear proyecto </button>
+				</div> 
+			</div> 
+
+		</div>
+	</div>
+</div>
+ 

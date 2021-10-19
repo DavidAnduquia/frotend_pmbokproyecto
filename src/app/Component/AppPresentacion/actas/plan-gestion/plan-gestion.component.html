@@ -1,0 +1,159 @@
+<!--
+<mat-card>
+    <mat-card-content class="mat-card-content-padre">
+
+        <mat-card-title class="ti">
+            <h2>plan de Gestion de beneficios del Acta
+                <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Ver()" class="transformation">Ver</mat-icon>
+                  </button>
+            </h2>
+        </mat-card-title>
+        <div *ngIf="vista ; else elseBlock">
+        
+            <mat-card-content class="mat-card-content-1">
+                <h4>acciones Plan de Gestion de beneficios de la entrada del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Veracciones()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaacciones ; else elseBlockvistaacciones">
+                    {{datosPlan.acciones}}
+                </p>
+                <ng-template #elseBlockvistaacciones></ng-template>
+            </mat-card-content>
+        
+            <mat-card-content class="mat-card-content-2">
+                <h4> componentes Plan de Gestion de beneficios de la entrada del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Vercomponentes()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistacomponentes ; else elseBlockvistacomponentes">
+                    {{datosPlan.componentes}}
+                </p>
+                <ng-template #elseBlockvistacomponentes></ng-template>
+            </mat-card-content>
+     
+            <mat-card-content class="mat-card-content-1">
+                <h4> prodcutos Plan de Gestion de beneficios de la entrada del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verprodcutos()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaprodcutos ; else elseBlockvistaprodcutos">
+                    {{datosPlan.prodcutos}}
+                </p>
+                <ng-template #elseBlockvistaprodcutos></ng-template>
+            </mat-card-content>
+       
+            <mat-card-content class="mat-card-content-2">
+                <h4>servicios Plan de Gestion de beneficios de la entrada del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verservicios()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaservicios ; else elseBlockVerservicios">
+                    {{datosPlan.servicios}}
+                </p>
+                <ng-template #elseBlockVerservicios></ng-template>
+            </mat-card-content>
+        
+            <mat-card-content class="mat-card-content-1">
+                <h4> resultado Plan de Gestion de beneficios de la entrada del acta
+                    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+                    <mat-icon  (click)="Verresultado()" class="transformation">Ver</mat-icon>
+                  </button>
+                </h4>
+                <p *ngIf="vistaresultado ; else elseBlockvistaresultado">
+                    {{datosPlan.resultado}}
+                </p>
+                <ng-template #elseBlockvistaresultado></ng-template>
+
+            </mat-card-content>
+    
+        </div>
+        <ng-template #elseBlock></ng-template>
+
+    </mat-card-content>
+
+</mat-card>
+
+-->
+
+
+<div class="contenido-accordion"> 
+<mat-accordion class="example-headers-align" multi>
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title> Acciones plan de gestion de beneficios de la entrada del acta </mat-panel-title>
+
+                <mat-panel-description>  
+             
+
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                   {{datosPlan.acciones}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+            <mat-panel-title>   Componentes plan de gestion de beneficios de la entrada del acta </mat-panel-title>
+
+            <mat-panel-description>  
+ 
+
+            
+            </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <ng-template matExpansionPanelContent>
+             {{datosPlan.componentes}}
+            </ng-template>
+        </mat-expansion-panel>
+
+
+          <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title> Servicios plan de gestion de beneficios de la entrada del acta </mat-panel-title>
+
+                <mat-panel-description>  
+            
+          
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+                     {{datosPlan.prodcutos}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+        <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                <mat-panel-title>  Resultado plan de gestion de beneficios de la entrada del acta</mat-panel-title>
+
+                <mat-panel-description>  
+            
+                
+                </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <ng-template matExpansionPanelContent>
+             {{datosPlan.resultado}}
+                </ng-template>
+        </mat-expansion-panel>
+
+
+ 
+
+</mat-accordion>
+
+</div>
