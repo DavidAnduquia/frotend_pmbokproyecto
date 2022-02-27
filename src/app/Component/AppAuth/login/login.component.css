@@ -51,9 +51,11 @@
   display: flex;
   height: 100%;
   width: 45%;
+  justify-self: center;
+  justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 0px;
+  margin-top: 300px;
  }
 
 
