@@ -46,10 +46,10 @@ import { SeguimientoProyectoControlComponent } from './Component/AppControl/segu
 import { PlanGestionBeneficiosComponent } from './Component/AppPmbokStep/actas/plan-gestion-beneficios/plan-gestion-beneficios.component';
 
 const routes: Routes = [
-  { path: '',  component: HomeComponent, canActivate: [AuthGuard] },
+  { path: '',  component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: HomeComponent },
 
   { path: 'misproyectos', component: MisProyectosComponent, canActivate: [AuthGuard] },
   { path: 'proyectos', component: ProyectosComponent, canActivate: [AuthGuard] },

@@ -1,4 +1,4 @@
-import { NavbarComponent } from './../../AppComponent/navbar/navbar.component';
+ 
 import { Component, ContentChild, OnInit,ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
  
@@ -38,14 +38,13 @@ export class LoginComponent implements OnInit {
     public usuarioService: UsuarioService,
     public router: Router,
     public dialog:MatDialog,
-    public navbarComponent:NavbarComponent
+ 
     ) { }
 
     
   
   ngOnInit(): void {
-    this.navbarComponent.isAuth() ? this.router.navigate(["/home"]) : this.router.navigate(["/"]);
-    localStorage.clear();
+     localStorage.clear();
   }
   
 

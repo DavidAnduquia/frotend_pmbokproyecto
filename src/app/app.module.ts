@@ -84,7 +84,7 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { InterceptorService } from './service/interceptor.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { NavbarComponent } from './Component/AppComponent/navbar/navbar.component';
+ 
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
@@ -141,7 +141,7 @@ import {MatSortModule} from '@angular/material/sort';
     SeguimientoProyectoControlComponent,
     ParticipacionesComponent,
     ControlParticipacionesComponent,
-    NavbarComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -167,6 +167,7 @@ import {MatSortModule} from '@angular/material/sort';
     NgxSpinnerModule,
 
     MatIconModule,
+   
     MatExpansionModule,
     MDBBootstrapModule,
     MatDialogModule,
@@ -180,7 +181,9 @@ import {MatSortModule} from '@angular/material/sort';
     MatListModule,
     MatSidenavModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+ 
+  
   ],
 
   providers: [

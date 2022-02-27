@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
  
@@ -19,7 +20,8 @@ import { DashboardControlRoutingModule } from './dashboard-control-routing.modul
     DashboardComponent,
     AdminFasesComponent,
     AdminContribuidoresComponent,
-    AdminProjectFaseComponent
+    AdminProjectFaseComponent,
+ 
   ],
   imports: [
     CommonModule,
@@ -27,8 +29,10 @@ import { DashboardControlRoutingModule } from './dashboard-control-routing.modul
  
     MatSidenavModule,
     MatIconModule,
+    MatButtonModule,
     MatListModule,    
-    MatToolbarModule
+    MatToolbarModule,
+   
   ]
 })
 export class DashboardControlProyectoModule { }
